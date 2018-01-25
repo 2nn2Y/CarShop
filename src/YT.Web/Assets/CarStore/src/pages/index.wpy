@@ -1,20 +1,20 @@
 <template>
   <view class="container">
-    <view class="home_banner">
+    <!-- <view class="home_banner">
       <navigator class="item">
         <image class="home_banner_img" src="../images/banner.png"></image>
       </navigator>
     </view>
     <view class="button-scan-entey">扫一扫进入车上商店</view>
-    <view class="labelOpenShop" @tap="onOpenShop">我要开店</view>
-    <!-- <swiper class="swiper" indicator-active-color="{{indicatorActiveColor}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+    <view class="labelOpenShop" @tap="onOpenShop">我要开店</view> -->
+    <swiper class="swiper" indicator-active-color="{{indicatorActiveColor}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
       <block wx:for="{{adList}}" wx:key="key">
         <swiper-item>
           <image src="{{item.picUrl}}" class="slide-image" @tap="goToAdvert({{item.advertUrl}})" />
         </swiper-item>
       </block>
-    </swiper> -->
-    <!-- <view class="pos">
+    </swiper>
+    <view class="pos">
       <view class="search_read_only">
         <navigator class="search_content" open-type="navigate" url="/pages/search">
           <i class="iconfont icon-search"></i>
@@ -25,8 +25,8 @@
           <view class="doc cfff">消息</view>
         </navigator>
       </view>
-    </view> -->
-    <!-- <view class="nav_list">
+    </view>
+    <view class="nav_list">
       <navigator open-type="navigate" url="/pages/sign_in">
         <image src="../images/icon_nav_01_new.png" class="nav_icon"></image>
         <view class="nav_text">签到有礼</view>
@@ -43,19 +43,19 @@
         <image src="../images/icon_nav_04_new.png" class="nav_icon"></image>
         <view class="nav_text">我要补货</view>
       </navigator>
-    </view> -->
+    </view>
     <!--发现好商品模块-->
-    <!-- <discover :list.sync="discoverList"></discover> -->
-    <!-- <view class="recommend-title">商品推荐</view> -->
+    <discover :list.sync="discoverList"></discover>
+    <view class="recommend-title">商品推荐</view>
     <!--加载更多时动画-->
     <bottomLoadMore :show.sync="showLoading" message="正在加载"></bottomLoadMore>
     <!--暂无数据显示-->
     <placeholder :show.sync="is_empty" message="暂无发现数据"></placeholder>
     <!--弹屏  types:0 图片  1：领红包   show 是否显示  @close 关闭回调  @callback 点击图片回调 或确定回调-->
-    <!-- <bombscreen :types.sync="tps"
+    <bombscreen :types.sync="tps"
     :show.sync="is_show_alert"
      @close.user="closeAlert"
-      @callback.user="alertCallback"></bombscreen> -->
+      @callback.user="alertCallback"></bombscreen>
   </view>
 </template>
 <script>
